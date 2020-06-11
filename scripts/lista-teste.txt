@@ -1,0 +1,2 @@
+<nome>Alberto</nome><idade>31</idade>
+<nome>Ana Maria</nome><idade>12</idade>
