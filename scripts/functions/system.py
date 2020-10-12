@@ -19,25 +19,23 @@ def createfile(nome_arquivo):
 
 
 def add_data(arquivo, nome, idade):
-    person = {"nome": nome, "idade": idade}
     try:
         lista = open(arquivo, 'at')
     except FileNotFoundError:
         print(f'\033[31;1m!Não foi possível adicionar novo registro em {arquivo}!\033[m')
     else:
-        lista.write(f"{person}\n")
+        lista.write(f"{nome}|{idade}\n")
 
 
 def loc_name(registro):
-    inicio = len('<nome>')
-    fim = registro.find('</nome>')
-    return registro[inicio:fim]
+    divisor_idx = registro.find('|')
+    return registro[:divisor_idx]
 
 
 def loc_age(registro):
-    inicio = registro.find('<idade>') + len('<idade>')
-    fim = registro.find('</idade>')
-    return registro[inicio:fim]
+    divisor_idx = registro.find('|')
+    line_end = registro.find('\n')
+    return registro[(divisor_idx + 1):line_end]
 
 
 def show(arquivo):
@@ -72,7 +70,7 @@ def change_data(arquivo, codigo, nome='Não-informado', idade='Não-informada'):
     lista = open(arquivo, 'r')
     conteudo = lista.readlines()
     conteudo.pop(codigo - 1)
-    conteudo.insert(codigo - 1, f'<nome>{nome}</nome><idade>{idade}</idade>\n')
+    conteudo.insert(codigo - 1, f"{nome}|{idade}\n")
     lista.close()
 
     lista = open(arquivo, 'w')
