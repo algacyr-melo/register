@@ -1,4 +1,4 @@
-from scripts.functions import *
+from scripts.functions.system import *
 from time import sleep
 """
 --> meu_primeiro_sistema
@@ -19,7 +19,7 @@ while True:
 
     # Atribuição do conteúdo do arquivo de texto à variável conteúdo
     lista = open(arquivo, 'r')
-    conteudo = lista.readlines()
+    conteudo = lista.readline()
     lista.close()
 
     show(arquivo)
