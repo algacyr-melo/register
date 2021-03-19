@@ -27,17 +27,6 @@ def add_data(arquivo, nome, idade):
         lista.write(f"{nome}|{idade}\n")
 
 
-def loc_name(registro):
-    divisor_idx = registro.find('|')
-    return registro[:divisor_idx]
-
-
-def loc_age(registro):
-    divisor_idx = registro.find('|')
-    line_end = registro.find('\n')
-    return registro[(divisor_idx + 1):line_end]
-
-
 def show(arquivo):
     lista = open(arquivo, 'r')
     conteudo = lista.readlines()
@@ -94,3 +83,13 @@ def only_name(txt):
         else:
             print('\033[31;1m!ERRO! Digite apenas caracteres alfabéticos\033[m')
     return nome
+
+def loc_name(registro):
+    divisor_idx = registro.find('|')
+    return registro[:divisor_idx]
+
+
+def loc_age(registro):
+    divisor_idx = registro.find('|')
+    line_end = registro.find('\n')
+    return registro[(divisor_idx + 1):line_end]

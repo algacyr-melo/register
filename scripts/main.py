@@ -1,10 +1,10 @@
-from scripts.functions.system import *
+from functions.system import *
 from time import sleep
 """
 --> meu_primeiro_sistema
 ---------------------------------------------------------
-Continuação do desafio 115 - CursoEmVideo de Python
-Autor: Algacyr Melo
+Challenge 115 | 2.0 - Python course by CursoEmVideo
+Author: Algacyr Melo
  --------------------------------------------------------
 """
 
