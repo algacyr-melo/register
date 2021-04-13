@@ -6,4 +6,4 @@ This project is a CRUD like that runs on terminal. It was created on my first pr
   - move to project directory on your editor terminal -> e.g. ``` cd [DIRECTORY_PATH] ```
   - run this command in your terminal ``` scripts/main.py ```
 
-**Make sure you have Python 3 installed on your device.
+**Make sure you have Python 3 installed on your device.**
