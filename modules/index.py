@@ -7,7 +7,6 @@ def file_exists(nome_arquivo):
     else:
         return True
 
-
 def createfile(nome_arquivo):
     try:
         a = open(nome_arquivo, 'wt+')
@@ -17,7 +16,6 @@ def createfile(nome_arquivo):
     else:
         print(f'\033[32;1mArquivo {nome_arquivo} criado com sucesso\033[m')
 
-
 def add_data(arquivo, nome, idade):
     try:
         lista = open(arquivo, 'at')
@@ -25,7 +23,6 @@ def add_data(arquivo, nome, idade):
         print(f'\033[31;1m!Não foi possível adicionar novo registro em {arquivo}!\033[m')
     else:
         lista.write(f"{nome}|{idade}\n")
-
 
 def show(arquivo):
     lista = open(arquivo, 'r')
@@ -36,14 +33,12 @@ def show(arquivo):
         print(f'{i + 1}. {loc_name(v):<20} {loc_age(v)} anos')
     print('_' * 40, '\033[m')
 
-
 def menu(*items):
     print(f'{"[op]":<10}{"MENU PRINCIPAL"}')
     print('-' * 40)
     for i, v in enumerate(items):
         print(f'\033[34;1m[{i + 1}] -   {v}\033[m')
     print('-' * 40)
-
 
 def remove_data(arquivo, codigo):
     lista = open(arquivo, 'r')
@@ -53,7 +48,6 @@ def remove_data(arquivo, codigo):
 
     lista = open(arquivo, 'w')
     lista.writelines(conteudo)
-
 
 def change_data(arquivo, codigo, nome='Não-informado', idade='Não-informada'):
     lista = open(arquivo, 'r')
@@ -65,7 +59,6 @@ def change_data(arquivo, codigo, nome='Não-informado', idade='Não-informada'):
     lista = open(arquivo, 'w')
     lista.writelines(conteudo)
 
-
 def only_int(txt):
     while True:
         try:
@@ -73,7 +66,6 @@ def only_int(txt):
             return int(n)
         except (TypeError, ValueError):
             print('\033[31;1mERRO! Por favor, digite um número INTEIRO\033[m')
-
 
 def only_name(txt):
     while True:
@@ -87,7 +79,6 @@ def only_name(txt):
 def loc_name(registro):
     divisor_idx = registro.find('|')
     return registro[:divisor_idx]
-
 
 def loc_age(registro):
     divisor_idx = registro.find('|')

@@ -1,2 +1,2 @@
-
-scripts/lista-teste.txt
+*.txt
+__pycache__/

@@ -1,5 +1,6 @@
-from functions.system import *
+from modules.index import *
 from time import sleep
+
 """
 --> meu_primeiro_sistema
 ---------------------------------------------------------
@@ -8,8 +9,7 @@ Author: Algacyr Melo
  --------------------------------------------------------
 """
 
-
-arquivo = "lista-teste.txt"
+arquivo = "registrants.txt"
 
 # Criação de arquivo de texto caso não exista
 if not file_exists(arquivo):
